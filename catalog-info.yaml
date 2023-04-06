@@ -1,0 +1,41 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: hpgrahsl-poi-gateway-app-dev
+  annotations:
+    argocd/app-name: hpgrahsl-poi-gateway-app-dev
+    backstage.io/kubernetes-id: hpgrahsl-poi-gateway-app-dev
+    backstage.io/kubernetes-namespace: hpgrahsl
+    backstage.io/kubernetes-label-selector: 'app.kubernetes.io/instance=hpgrahsl-poi-gateway-app-dev'
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: backstage-2w7cf/poi-gateway-hpgrahsl
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://devspaces.apps.cluster-2w7cf.2w7cf.sandbox1883.opentlc.com/#https://github.com/backstage-2w7cf/poi-gateway-hpgrahsl?che-editor=che-incubator/che-code/insiders&devfilePath=.devfile-vscode.yaml
+      title: CodeReady Workspaces (VS Code)
+      icon: web
+    - url: https://devspaces.apps.cluster-2w7cf.2w7cf.sandbox1883.opentlc.com/#https://github.com/backstage-2w7cf/poi-gateway-hpgrahsl?che-editor=che-incubator/che-idea/next&devfilePath=.devfile-intellij.yaml
+      title: CodeReady Workspaces (JetBrains IntelliJ)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/hpgrahsl"
+  system: workshop-system-hpgrahsl
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: workshop-system-hpgrahsl
+  tags:
+    - backstage
+    - janus-idp
+    - openshift
+    - workshop
+    - rh-summit
+spec:
+  owner: "user:default/hpgrahsl"
